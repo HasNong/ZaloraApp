@@ -1,65 +1,62 @@
-package com.example.zaloraapp;
-import android.content.Intent;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.zaloraapp
 
-public class ChangePasswordActivity extends AppCompatActivity {
+import android.content.Intent
+import android.os.Bundle
+import android.text.TextUtils
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
-    private EditText etCurrentPassword, etNewPassword, etConfirmPassword;
-    private Button btnUpdatePassword;
-    private TextView tvBackToLogin;
+class ChangePasswordActivity : AppCompatActivity() {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_password); // make sure your changepass XML is named activity_change_password.xml
+    private lateinit var etCurrentPassword: EditText
+    private lateinit var etNewPassword: EditText
+    private lateinit var etConfirmPassword: EditText
+    private lateinit var btnUpdatePassword: Button
+    private lateinit var tvBackToLogin: TextView
 
-        etCurrentPassword  = findViewById(R.id.etCurrentPassword);
-        etNewPassword      = findViewById(R.id.etNewPassword);
-        etConfirmPassword  = findViewById(R.id.etConfirmPassword);
-        btnUpdatePassword  = findViewById(R.id.btnUpdatePassword);
-        tvBackToLogin      = findViewById(R.id.tvBackToLogin);
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_change_password)
 
-        // Update Password button
-        btnUpdatePassword.setOnClickListener(v -> {
-            String current = etCurrentPassword.getText().toString().trim();
-            String newPass  = etNewPassword.getText().toString().trim();
-            String confirm  = etConfirmPassword.getText().toString().trim();
+        etCurrentPassword = findViewById(R.id.etCurrentPassword)
+        etNewPassword     = findViewById(R.id.etNewPassword)
+        etConfirmPassword = findViewById(R.id.etConfirmPassword)
+        btnUpdatePassword = findViewById(R.id.btnUpdatePassword)
+        tvBackToLogin     = findViewById(R.id.tvBackToLogin)
+
+        btnUpdatePassword.setOnClickListener {
+            val current = etCurrentPassword.text.toString().trim()
+            val newPass  = etNewPassword.text.toString().trim()
+            val confirm  = etConfirmPassword.text.toString().trim()
 
             if (TextUtils.isEmpty(current)) {
-                etCurrentPassword.setError("Enter your current password");
-                return;
+                etCurrentPassword.error = "Enter your current password"
+                return@setOnClickListener
             }
             if (TextUtils.isEmpty(newPass)) {
-                etNewPassword.setError("Enter a new password");
-                return;
+                etNewPassword.error = "Enter a new password"
+                return@setOnClickListener
             }
-            if (newPass.length() < 6) {
-                etNewPassword.setError("Password must be at least 6 characters");
-                return;
+            if (newPass.length < 6) {
+                etNewPassword.error = "Password must be at least 6 characters"
+                return@setOnClickListener
             }
-            if (!newPass.equals(confirm)) {
-                etConfirmPassword.setError("Passwords do not match");
-                return;
+            if (newPass != confirm) {
+                etConfirmPassword.error = "Passwords do not match"
+                return@setOnClickListener
             }
 
-            // TODO: Replace this with your actual password update logic (e.g. Firebase)
-            Toast.makeText(this, "Password updated successfully!", Toast.LENGTH_SHORT).show();
+            // TODO: Replace with real password update logic (e.g. Firebase)
+            Toast.makeText(this, "Password updated successfully!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, LoginActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+            startActivity(intent)
+        }
 
-            // Go back to Login after updating
-            Intent intent = new Intent(ChangePasswordActivity.this, LoginActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-        });
-
-        // Back to Login link
-        tvBackToLogin.setOnClickListener(v -> {
-            finish(); // just pop this activity off the stack
-        });
+        tvBackToLogin.setOnClickListener { finish() }
     }
 }

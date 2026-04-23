@@ -1,68 +1,66 @@
-package com.example.zaloraapp;
-import android.content.Intent;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.zaloraapp
 
+import android.content.Intent
+import android.os.Bundle
+import android.text.TextUtils
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
-public class LoginActivity extends AppCompatActivity {
+class LoginActivity : AppCompatActivity() {
 
-    private EditText etEmail, etPassword;
-    private Button btnLogin;
-    private TextView tvForgotPassword;
+    private lateinit var etEmail: EditText
+    private lateinit var etPassword: EditText
+    private lateinit var btnLogin: Button
+    private lateinit var tvForgotPassword: TextView
 
-    // Hardcoded credentials for demo — replace with real auth (e.g. Firebase) later
-    private static final String DEMO_EMAIL    = "user@email.com";
-    private static final String DEMO_PASSWORD = "password123";
+    companion object {
+        private const val DEMO_EMAIL    = "user@email.com"
+        private const val DEMO_PASSWORD = "password123"
+    }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login); // make sure your login XML file is named activity_login.xml
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login)
 
-        etEmail         = findViewById(R.id.etEmail);
-        etPassword      = findViewById(R.id.etPassword);
-        btnLogin        = findViewById(R.id.btnLogin);
-        tvForgotPassword = findViewById(R.id.tvForgotPassword);
-        TextView tvRegisterLink = findViewById(R.id.tvRegisterLink);
-        tvRegisterLink.setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-        });
+        etEmail          = findViewById(R.id.etEmail)
+        etPassword       = findViewById(R.id.etPassword)
+        btnLogin         = findViewById(R.id.btnLogin)
+        tvForgotPassword = findViewById(R.id.tvForgotPassword)
 
-        // Login button → go to dashboard
-        btnLogin.setOnClickListener(v -> {
-            String email    = etEmail.getText().toString().trim();
-            String password = etPassword.getText().toString().trim();
+        val tvRegisterLink = findViewById<TextView>(R.id.tvRegisterLink)
+        tvRegisterLink.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
+        btnLogin.setOnClickListener {
+            val email    = etEmail.text.toString().trim()
+            val password = etPassword.text.toString().trim()
 
             if (TextUtils.isEmpty(email)) {
-                etEmail.setError("Email is required");
-                return;
+                etEmail.error = "Email is required"
+                return@setOnClickListener
             }
             if (TextUtils.isEmpty(password)) {
-                etPassword.setError("Password is required");
-                return;
+                etPassword.error = "Password is required"
+                return@setOnClickListener
             }
 
-            // Check credentials
-            if (email.equals(DEMO_EMAIL) && password.equals(DEMO_PASSWORD)) {
-                Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // clears back stack
-                startActivity(intent);
+            if (email == DEMO_EMAIL && password == DEMO_PASSWORD) {
+                Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity::class.java).apply {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                }
+                startActivity(intent)
             } else {
-                Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show()
             }
-        });
+        }
 
-        // Forgot Password → go to ChangePasswordActivity
-        tvForgotPassword.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.this, ChangePasswordActivity.class);
-            startActivity(intent);
-        });
+        tvForgotPassword.setOnClickListener {
+            startActivity(Intent(this, ChangePasswordActivity::class.java))
+        }
     }
 }
