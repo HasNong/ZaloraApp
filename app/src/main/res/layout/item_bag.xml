@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/ivBagItemImage"
+        android:layout_width="90dp"
+        android:layout_height="110dp"
+        android:scaleType="centerCrop"
+        android:background="#F0F0F0"
+        android:contentDescription="Bag Item"
+        android:layout_marginEnd="12dp"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Brand + Remove -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvBagBrand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="10sp"
+                android:textColor="#9E9E9E"
+                android:letterSpacing="0.08"/>
+
+            <ImageView
+                android:id="@+id/btnBagRemove"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="Remove"
+                android:tint="#9E9E9E"
+                android:clickable="true"
+                android:focusable="true"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvBagItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/tvBagItemSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="#9E9E9E"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/tvBagItemColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="#9E9E9E"/>
+
+        <!-- Qty Controls + Price -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+
+            <!-- Qty stepper -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="#F5F5F5">
+
+                <TextView
+                    android:id="@+id/btnBagMinus"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:text="−"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <TextView
+                    android:id="@+id/tvBagItemQty"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:id="@+id/btnBagPlus"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:text="+"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+            </LinearLayout>
+
+            <!-- Price -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tvBagItemOriginalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:textColor="#9E9E9E"
+                    android:layout_gravity="end"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/tvBagItemPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_gravity="end"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="#FFFFFF">
+
+    <!-- Top App Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/btnMenu"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:contentDescription="Menu"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ZALORA"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:letterSpacing="0.15"/>
+
+        <ImageView
+            android:id="@+id/btnBag"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_add"
+            android:contentDescription="Bag"/>
+
+    </LinearLayout>
+
+    <!-- Navbar Fragment Container -->
+    <FrameLayout
+        android:id="@+id/navbarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"/>
+
+    <!-- Bottom Add to Bag bar -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_above="@id/navbarContainer"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
+
+        <ImageView
+            android:id="@+id/btnWishlistBottom"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:src="@android:drawable/btn_star_big_off"
+            android:padding="14dp"
+            android:background="#F5F5F5"
+            android:contentDescription="Wishlist"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/btnAddToBag"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ADD TO BAG"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:letterSpacing="0.1"
+            android:gravity="center"
+            android:background="#000000"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/bottomBar"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Product Hero Image -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="420dp">
+
+                <ImageView
+                    android:id="@+id/ivProductHero"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:background="#1A1A1A"
+                    android:contentDescription="Product Image"/>
+
+            </FrameLayout>
+
+            <!-- Product Info -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LUXE COLLECTION"
+                            android:textSize="10sp"
+                            android:textColor="#9E9E9E"
+                            android:letterSpacing="0.1"/>
+
+                        <TextView
+                            android:id="@+id/tvProductName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ESSENTIAL SILK SLIP DRESS"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnWishlist"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@android:drawable/btn_star_big_off"
+                        android:contentDescription="Wishlist"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                </LinearLayout>
+
+                <!-- Price -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$249.00"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$399.00"
+                        android:textSize="14sp"
+                        android:textColor="#9E9E9E"/>
+
+                </LinearLayout>
+
+                <!-- Color -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="COLOR: ONYX BLACK"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <View
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="#000000"
+                        android:layout_marginEnd="8dp"/>
+
+                    <View
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="#D0D0D0"/>
+
+                </LinearLayout>
+
+                <!-- Size -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="SELECT SIZE"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:letterSpacing="0.08"/>
+
+                    <TextView
+                        android:id="@+id/tvSizeGuide"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SIZE GUIDE"
+                        android:textSize="11sp"
+                        android:textColor="#000000"
+                        android:letterSpacing="0.05"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                </LinearLayout>
+
+                <!-- Size Options -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:text="XS"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:background="#F5F5F5"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:text="S"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"
+                        android:background="#000000"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:text="M"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:background="#F5F5F5"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:text="L"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:background="#F5F5F5"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                </LinearLayout>
+
+                <!-- Wishlist Button -->
+                <TextView
+                    android:id="@+id/btnWishlistFull"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="WISHLIST"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:letterSpacing="0.1"
+                    android:gravity="center"
+                    android:background="#FFFFFF"
+                    android:layout_marginBottom="24dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="16dp"/>
+
+                <!-- Product Information Accordion -->
+                <LinearLayout
+                    android:id="@+id/rowProductInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="PRODUCT INFORMATION"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:letterSpacing="0.08"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="∧"
+                        android:textSize="14sp"
+                        android:textColor="#000000"/>
+
+                </LinearLayout>
+
+                <!-- Product Info Content -->
+                <LinearLayout
+                    android:id="@+id/productInfoContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Crafted from 100% premium mulberry silk, this essential slip dress features a bias-cut silhouette that drapes elegantly over the body. A timeless piece for any sophisticated wardrobe."
+                        android:textSize="12sp"
+                        android:textColor="#555555"
+                        android:lineSpacingMultiplier="1.4"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="• 100% Mulberry Silk" android:textSize="12sp" android:textColor="#555555" android:layout_marginBottom="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="• Adjustable spaghetti straps" android:textSize="12sp" android:textColor="#555555" android:layout_marginBottom="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="• Side slit detail" android:textSize="12sp" android:textColor="#555555" android:layout_marginBottom="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="• Midi length" android:textSize="12sp" android:textColor="#555555"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="16dp"/>
+
+                <!-- Shipping & Returns Accordion -->
+                <LinearLayout
+                    android:id="@+id/rowShipping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="16dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="SHIPPING &amp; RETURNS"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:letterSpacing="0.08"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="∨"
+                        android:textSize="14sp"
+                        android:textColor="#000000"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="24dp"/>
+
+                <!-- Complete The Look -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="COMPLETE THE LOOK"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="12dp"/>
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="4dp" android:orientation="vertical">
+                        <ImageView android:layout_width="match_parent" android:layout_height="160dp" android:background="#2A2A2A" android:scaleType="centerCrop" android:contentDescription="Complete Look 1"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SHOES" android:textSize="9sp" android:textColor="#9E9E9E" android:letterSpacing="0.08" android:layout_marginTop="6dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pointed Leather Heels" android:textSize="11sp" android:textStyle="bold" android:textColor="#000000"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$120.00" android:textSize="11sp" android:textColor="#000000"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="4dp" android:orientation="vertical">
+                        <ImageView android:layout_width="match_parent" android:layout_height="160dp" android:background="#3A3A2A" android:scaleType="centerCrop" android:contentDescription="Complete Look 2"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ACCESSORIES" android:textSize="9sp" android:textColor="#9E9E9E" android:letterSpacing="0.08" android:layout_marginTop="6dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mini Leather Clutch" android:textSize="11sp" android:textStyle="bold" android:textColor="#000000"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$85.00" android:textSize="11sp" android:textColor="#000000"/>
+                    </LinearLayout>
+
+                </GridLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

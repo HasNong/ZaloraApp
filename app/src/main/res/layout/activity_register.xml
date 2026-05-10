@@ -1,118 +1,231 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
-    android:background="#F5F7FA">
-
-    <ImageView
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:src="@drawable/ic_launcher_foreground"
-        android:contentDescription="App Logo"
-        android:layout_marginBottom="16dp"
-        android:scaleType="centerInside"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#1F2933"
-        android:layout_marginBottom="24dp"/>
-
-    <EditText
-        android:id="@+id/etFirstName"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="First Name"
-        android:inputType="textPersonName"
-        android:background="#FFFFFF"
-        android:padding="12dp"
-        android:textColor="#111111"
-        android:layout_marginBottom="12dp"/>
-
-    <EditText
-        android:id="@+id/etLastName"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Last Name"
-        android:inputType="textPersonName"
-        android:background="#FFFFFF"
-        android:padding="12dp"
-        android:textColor="#111111"
-        android:layout_marginBottom="12dp"/>
-
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Email Address"
-        android:inputType="textEmailAddress"
-        android:background="#FFFFFF"
-        android:padding="12dp"
-        android:textColor="#111111"
-        android:layout_marginBottom="12dp"/>
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:background="#FFFFFF"
-        android:padding="12dp"
-        android:textColor="#111111"
-        android:layout_marginBottom="12dp"/>
-
-    <EditText
-        android:id="@+id/etConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:background="#FFFFFF"
-        android:padding="12dp"
-        android:textColor="#111111"
-        android:layout_marginBottom="20dp"/>
-
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Register"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:backgroundTint="#2563EB"
-        android:layout_marginBottom="12dp"/>
+    android:background="#FAFAFA"
+    android:fillViewport="true">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp">
+
+            <ImageView
+                android:id="@+id/btnClose"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="Close"
+                android:tint="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="ZALORA"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.2" />
+        </RelativeLayout>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Already have an account? "
-            android:textSize="14sp"
-            android:textColor="#6B7280"/>
+            android:text="JOIN THE CLUB"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
 
         <TextView
-            android:id="@+id/tvLoginLink"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Unlock exclusive rewards and early access to the latest collections."
+            android:textColor="#666666"
             android:textSize="14sp"
-            android:textColor="#2563EB"
-            android:clickable="true"
-            android:focusable="true"/>
+            android:layout_marginBottom="32dp" />
+
+        <!-- Full Name Field -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FULL NAME"
+            android:textColor="#666666"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Alex Rivera"
+            android:inputType="textPersonName"
+            android:background="@drawable/edittext_border"
+            android:padding="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="24dp"
+            android:textSize="14sp" />
+
+        <!-- Email Field -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EMAIL ADDRESS"
+            android:textColor="#666666"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="alex@example.com"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/edittext_border"
+            android:padding="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="24dp"
+            android:textSize="14sp" />
+
+        <!-- Password Field -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PASSWORD"
+            android:textColor="#666666"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="24dp">
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="••••••••"
+                android:inputType="textPassword"
+                android:background="@drawable/edittext_border"
+                android:padding="12dp"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/ivShowPassword"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@android:drawable/ic_menu_view"
+                android:tint="#666666" />
+        </RelativeLayout>
+
+        <!-- Gender Preference -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GENDER PREFERENCE"
+            android:textColor="#666666"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btnWomen"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:backgroundTint="#000000"
+                android:text="WOMEN"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnMen"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
+                android:text="MEN"
+                android:textColor="#000000"
+                android:strokeColor="#E0E0E0"
+                android:strokeWidth="1dp" />
+        </LinearLayout>
+
+        <!-- Subscription Checkbox -->
+        <CheckBox
+            android:id="@+id/cbSubscribe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yes, I'd like to receive exclusive offers and fashion news via email. I can unsubscribe at any time."
+            android:textColor="#333333"
+            android:textSize="13sp"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Create Account Button -->
+        <Button
+            android:id="@+id/btnCreateAccount"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:backgroundTint="#000000"
+            android:text="CREATE ACCOUNT"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Footer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? "
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textDecoration="underline" />
+        </LinearLayout>
+
+        <!-- Legal Disclaimer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="By creating an account, you agree to our\nTerms of Use and Privacy Policy."
+            android:textColor="#999999"
+            android:textSize="11sp" />
 
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>

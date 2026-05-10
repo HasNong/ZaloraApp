@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="#FFFFFF">
+
+    <!-- Top App Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/btnMenu"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:contentDescription="Menu"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ZALORA"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:letterSpacing="0.15"/>
+
+        <ImageView
+            android:id="@+id/btnBag"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_add"
+            android:contentDescription="Bag"/>
+
+    </LinearLayout>
+
+    <!-- Navbar Fragment Container -->
+    <FrameLayout
+        android:id="@+id/navbarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"/>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/navbarContainer"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- MY BAG Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="12dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MY BAG"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:letterSpacing="0.05"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(3 ITEMS)"
+                    android:textSize="12sp"
+                    android:textColor="#9E9E9E"/>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+            <!-- Bag Item 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="110dp"
+                    android:scaleType="centerCrop"
+                    android:background="#1A1A1A"
+                    android:contentDescription="Item 1"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="MANGO"
+                            android:textSize="10sp"
+                            android:textColor="#9E9E9E"
+                            android:letterSpacing="0.08"/>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_menu_close_clear_cancel"
+                            android:contentDescription="Remove"
+                            android:tint="#9E9E9E"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TAILORED STRUCTURED BLAZER"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Size: M"
+                        android:textSize="11sp"
+                        android:textColor="#9E9E9E"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Color: Jet Black"
+                        android:textSize="11sp"
+                        android:textColor="#9E9E9E"/>
+
+                    <!-- Quantity + Price -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:background="#F5F5F5">
+
+                            <TextView
+                                android:id="@+id/btnMinus1"
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:text="−"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:textColor="#000000"
+                                android:clickable="true"
+                                android:focusable="true"/>
+
+                            <TextView
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:text="1"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:textColor="#000000"/>
+
+                            <TextView
+                                android:id="@+id/btnPlus1"
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:text="+"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:textColor="#000000"
+                                android:clickable="true"
+                                android:focusable="true"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="$129.00"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:gravity="end"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+            <!-- Bag Item 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="110dp"
+                    android:scaleType="centerCrop"
+                    android:background="#C8A882"
+                    android:contentDescription="Item 2"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="CHARLES &amp; KEITH"
+                            android:textSize="10sp"
+                            android:textColor="#9E9E9E"
+                            android:letterSpacing="0.08"/>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_menu_close_clear_cancel"
+                            android:contentDescription="Remove"
+                            android:tint="#9E9E9E"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="QUILTED CHAIN LINK BAG"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Size: OS"
+                        android:textSize="11sp"
+                        android:textColor="#9E9E9E"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Color: Nude Beige"
+                        android:textSize="11sp"
+                        android:textColor="#9E9E9E"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:background="#F5F5F5">
+
+                            <TextView
+                                android:id="@+id/btnMinus2"
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:text="−"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:textColor="#000000"
+                                android:clickable="true"
+                                android:focusable="true"/>
+
+                            <TextView
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:text="1"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:textColor="#000000"/>
+
+                            <TextView
+                                android:id="@+id/btnPlus2"
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:text="+"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:textColor="#000000"
+                                android:clickable="true"
+                                android:focusable="true"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="end">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$89.00"
+                                android:textSize="11sp"
+                                android:textColor="#9E9E9E"
+                                android:layout_gravity="end"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$65.00"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#E53935"
+                                android:layout_gravity="end"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+            <!-- Free Shipping Notice -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_menu_directions"
+                    android:contentDescription="Shipping"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You're "
+                    android:textSize="12sp"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$15.00"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" away from free shipping."
+                    android:textSize="12sp"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <!-- Order Summary -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:padding="16dp"
+                android:background="#FFFFFF">
+
+                <!-- Border via outline -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ORDER SUMMARY"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Subtotal -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Subtotal" android:textSize="13sp" android:textColor="#555555"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$304.00" android:textSize="13sp" android:textColor="#000000"/>
+                </LinearLayout>
+
+                <!-- Shipping -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Shipping" android:textSize="13sp" android:textColor="#555555"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$10.00" android:textSize="13sp" android:textColor="#000000"/>
+                </LinearLayout>
+
+                <!-- Tax -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Tax" android:textSize="13sp" android:textColor="#555555"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$24.00" android:textSize="13sp" android:textColor="#000000"/>
+                </LinearLayout>
+
+                <!-- Discount -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Promotional Discount" android:textSize="13sp" android:textColor="#E53935"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-$24.00" android:textSize="13sp" android:textColor="#E53935"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="16dp"/>
+
+                <!-- Total -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="TOTAL" android:textSize="15sp" android:textStyle="bold" android:textColor="#000000" android:letterSpacing="0.08"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$314.00" android:textSize="20sp" android:textStyle="bold" android:textColor="#000000"/>
+                </LinearLayout>
+
+                <!-- Checkout Button -->
+                <TextView
+                    android:id="@+id/btnCheckout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="CHECKOUT"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:letterSpacing="0.1"
+                    android:gravity="center"
+                    android:background="#000000"
+                    android:layout_marginBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="By clicking checkout, you agree to our Terms &amp; Conditions"
+                    android:textSize="10sp"
+                    android:textColor="#9E9E9E"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Promo Code -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PROMO CODE"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="ENTER CODE"
+                        android:textSize="12sp"
+                        android:background="#F5F5F5"
+                        android:paddingStart="12dp"/>
+
+                    <TextView
+                        android:id="@+id/btnApply"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:text="APPLY"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:background="#E0E0E0"
+                        android:letterSpacing="0.05"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- You May Also Like -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YOU MAY ALSO LIKE"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:letterSpacing="0.08"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="12dp"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp" android:orientation="vertical">
+                    <ImageView android:layout_width="match_parent" android:layout_height="160dp" android:background="#3A6EA5" android:scaleType="centerCrop" android:contentDescription="Suggested 1"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ZALORA BASIC" android:textSize="10sp" android:textColor="#9E9E9E" android:layout_marginTop="6dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Minimalist Linen Dress" android:textSize="12sp" android:textStyle="bold" android:textColor="#000000"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$49.00" android:textSize="12sp" android:textColor="#000000"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp" android:orientation="vertical">
+                    <ImageView android:layout_width="match_parent" android:layout_height="160dp" android:background="#2C5F2E" android:scaleType="centerCrop" android:contentDescription="Suggested 2"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ADIDAS" android:textSize="10sp" android:textColor="#9E9E9E" android:layout_marginTop="6dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gazelle Bold Shoes" android:textSize="12sp" android:textStyle="bold" android:textColor="#000000"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$110.00" android:textSize="12sp" android:textColor="#000000"/>
+                </LinearLayout>
+
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

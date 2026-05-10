@@ -12,37 +12,58 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZaloraApp">
 
-        <!-- LoginActivity is now the first screen -->
+        <!-- LAUNCHER: First screen the user sees -->
         <activity
-            android:name=".LoginActivity"
-            android:exported="false">
-        </activity>
-
-        <!-- Dashboard — no longer the launcher -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+        android:name=".DashboardActivity"
+        android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>/>
-        </activity>
+        </intent-filter>
+    </activity>
 
-        <!-- Change Password -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+
         <activity
             android:name=".ChangePasswordActivity"
             android:exported="false" />
 
-        <!-- Register -->
         <activity
-            android:name=".RegisterActivity"
+            android:name=".MainActivity"
             android:exported="false" />
+
+
+
+        <activity
+            android:name=".ProductListingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BagActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AccountActivity"
+            android:exported="false" />
+
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
+
         <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
+
     </application>
 
 </manifest>

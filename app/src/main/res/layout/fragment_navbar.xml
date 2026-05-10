@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:orientation="horizontal"
+    android:background="#FFFFFF"
+    android:elevation="8dp">
+
+    <!-- Top border line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_gravity="top"/>
+
+    <!-- SHOP -->
+    <LinearLayout
+        android:id="@+id/nav_shop"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="Shop"
+            android:tint="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SHOP"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginTop="2dp"
+            android:letterSpacing="0.05"/>
+
+    </LinearLayout>
+
+    <!-- DISCOVER -->
+    <LinearLayout
+        android:id="@+id/nav_discover"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@android:drawable/ic_menu_compass"
+            android:contentDescription="Discover"
+            android:tint="#9E9E9E"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DISCOVER"
+            android:textSize="9sp"
+            android:textColor="#9E9E9E"
+            android:layout_marginTop="2dp"
+            android:letterSpacing="0.05"/>
+
+    </LinearLayout>
+
+    <!-- FEED -->
+    <LinearLayout
+        android:id="@+id/nav_feed"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:contentDescription="Feed"
+            android:tint="#9E9E9E"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FEED"
+            android:textSize="9sp"
+            android:textColor="#9E9E9E"
+            android:layout_marginTop="2dp"
+            android:letterSpacing="0.05"/>
+
+    </LinearLayout>
+
+    <!-- BAG -->
+    <LinearLayout
+        android:id="@+id/nav_bag"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@android:drawable/ic_menu_add"
+                android:contentDescription="Bag"
+                android:tint="#9E9E9E"/>
+
+            <TextView
+                android:id="@+id/badge_bag"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:text="3"
+                android:textSize="9sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="#000000"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="-4dp"
+                android:layout_marginEnd="-4dp"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BAG"
+            android:textSize="9sp"
+            android:textColor="#9E9E9E"
+            android:layout_marginTop="2dp"
+            android:letterSpacing="0.05"/>
+
+    </LinearLayout>
+
+    <!-- ACCOUNT -->
+    <LinearLayout
+        android:id="@+id/nav_account"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@android:drawable/ic_menu_myplaces"
+            android:contentDescription="Account"
+            android:tint="#9E9E9E"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACCOUNT"
+            android:textSize="9sp"
+            android:textColor="#9E9E9E"
+            android:layout_marginTop="2dp"
+            android:letterSpacing="0.05"/>
+
+    </LinearLayout>
+
+</LinearLayout>
